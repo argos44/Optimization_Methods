@@ -1,0 +1,13 @@
+Q-2 : Analytical similarity between Laplacian eigenmaps and spectral clustering
+
+Spectral clustering : Spectral clustering is technique for data clustering which makes use of the spectrum (eigenvalues) of the similarity matrix of the data to perform dimensionality reduction before clustering in fewer dimensions.
+
+Spectral clustering solves the generalised problem, Ly=λDy, 
+L = D - W, is Laplacian matrix, D is degree matrix and
+W is the weight or the similarity matrix which define transformation of data points  with pairwise similarities or pairwise distances into a graph.
+The eigenvectors that are relevant are the ones that correspond to smallest several eigenvalues of the Laplacian except for the smallest eigenvalue which will have a value of 0.
+Based on the definition of this similarity matrix and hence the Laplacian L, differnet goals are achieved.
+Now, in Laplacian Eigenmaps, this similarity matrix W is defined as Euclidean distance between the k-neighbouring points to construct a graph. 
+Hence, by solving for clustering on such Laplacian i.e finding transformation of points on K smallest eigen values, preserves the distances in the lower dimensional spaces. We can show that minimizing the objective SUM((y(i) - y(j))^2 * W(i,j)) = 2y'Ly and the vector that minimizes the objective function is given by the minimum eigenvalue solution to the generalized eigenvalue problem: Ly=λDy.
+
+Other applications of spectral clustering depending on different similarity matrix : Normalized-cut which is used in image segementation where the similarity matrix is defined as similarity between pixels based on intensity values, texture or other values for images in HSV format. 
